@@ -1,13 +1,22 @@
-use std::collections::HashMap;
+extern crate pest;
+#[macro_use]
+extern crate pest_derive;
+
+use pest::Parser;
+
+
+#[derive(Parser)]
+#[grammar = "costflow.pest"]
+pub struct CostFlowParser;
 
 fn main() {
-    println!("Hello, world!");
-    let s1 = String::from("tic");
-    let mut hash_map2 = HashMap::new();
-    hash_map2.insert(1, 2);
-    let s2 = String::from("tac");
-    let s3 = String::from("toe");
-
-    let s = format!("{}-{}-{}", s1, s2, s3);
-    let s8 = s1 + &s2 + &s3;
+    let result = CostFlowParser::parse(Rule::transaction, "红包 #my-tag 66.66 工资卡 > 发红包");
+    match result {
+        Ok(transactions) => {
+            println!("{:?}", transactions);
+        },
+        Err(e) => {
+            println!("{}", e);
+        }
+    }
 }
