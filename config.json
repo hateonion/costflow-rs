@@ -1,0 +1,8 @@
+{
+    "交行": "Liabilities:CreditCard:Jiaohang",
+    "cook": "Expenses:Food:买菜做饭",
+    "零食饮料": "Expenses:Food:零食饮料",
+    "snack": "Expenses:Food:零食饮料",
+    "coffee": "Expenses:Food:零食饮料",
+    "benefit": "Equity:Benefit"
+}
