@@ -6,8 +6,6 @@ extern crate pest_derive;
 #[grammar = "costflow.pest"]
 pub struct CostFlowParser;
 
-
-
 #[derive(Debug)]
 pub struct Transaction<'a> {
     pub date: &'a str,
@@ -20,8 +18,17 @@ pub struct Transaction<'a> {
     pub narration: &'a str,
 }
 
-impl Transaction<'static>  {
+impl Transaction<'static> {
     pub fn new() -> Transaction<'static> {
-        Transaction { date: "", amount: 0.0, flag: "", tag: "", link: "", from_account: "", to_account: "", narration: "" }
+        Transaction {
+            date: "",
+            amount: 0.0,
+            flag: "",
+            tag: "",
+            link: "",
+            from_account: "",
+            to_account: "",
+            narration: "",
+        }
     }
 }
